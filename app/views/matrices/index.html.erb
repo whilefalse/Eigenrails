@@ -1,0 +1,16 @@
+<h1>Matrix</h1>
+<div id="matrix">
+  <%= form_tag :controller => :matrices, :action => :index do %>
+  <% (0...@dimension).each do |i| %>
+  <p>
+  <% (0...@dimension).each do |j| %>
+  <%= text_field_tag :"matrix[#{i}][#{j}]" %>
+  <% end %>
+  </p>
+  <% end %>
+  <%= submit_tag "Preview" %>
+  <% end %>
+
+  <%= matrix_latex @matrix if @matrix %>
+
+</div>

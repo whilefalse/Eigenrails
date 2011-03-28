@@ -1,0 +1,3 @@
+class MatricesController < ApplicationController
+
+end
