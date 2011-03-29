@@ -3,7 +3,7 @@ module MatrixHelper
 
   def matrix_latex matrix
     tex = '\begin{bmatrix}' + matrix.to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{bmatrix}'
-    image_tag(tex_url tex)
+    image_tag(tex_url tex, :alt => 'Matrix Preview')
   end
 
   def tex_url tex
