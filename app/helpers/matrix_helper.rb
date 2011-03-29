@@ -1,8 +1,10 @@
 module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
 
-  def tex_for_matrix matrix, type='b'
-    '\begin{'+type+'matrix}' + matrix.to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{'+type+'matrix}'
+  Matrix.class_eval do
+    def to_tex type='b'
+      '\begin{'+type+'matrix}' + to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{'+type+'matrix}'
+    end
   end
 
   def tex_image tex, alt='Matrix Preview'

@@ -15,7 +15,7 @@
       <%= submit_tag "Preview" %>
   <% end %>
 
-  <%= tex_image(tex_for_matrix(@matrix)) if @matrix %>
-  <%= tex_image(tex_for_matrix(@matrix, 'v')+' = '+ @matrix.determinant.to_s) if @matrix %>
+  <%= tex_image(@matrix.to_tex) if @matrix %>
+  <%= tex_image(@matrix.to_tex('v') + ' = ' + @matrix.determinant.to_s) if @matrix %>
 
 </div>
