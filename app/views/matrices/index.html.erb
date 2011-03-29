@@ -1,7 +1,8 @@
 <h1>Matrix</h1>
 <div id="matrix">
   <%= form_tag :controller => :matrices, :action => :index do %>
-      <%= text_field_tag :size, @dimension %>
+      <%= label_tag :dimension %>
+      <%= text_field_tag :dimension, @dimension %>
       <%= submit_tag "New" %>
   <% end %>
 
