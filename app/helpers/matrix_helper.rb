@@ -1,3 +1,4 @@
+require "matrix"
 module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
 
