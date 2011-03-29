@@ -1,6 +1,6 @@
 <h1>Matrix</h1>
 <div id="matrix">
-  <%= link_to "2x2", nil, {:? => {:dimension => 2}} %>
+  <%= link_to("2x2", nil, {:'?' => {:dimension => 2}}) %>
 
   <%= form_tag :controller => :matrices, :action => :index do %>
       <% (0...@dimension).each do |i| %>
