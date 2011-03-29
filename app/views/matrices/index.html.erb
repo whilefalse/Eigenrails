@@ -6,14 +6,14 @@
   <% end %>
 
   <%= form_tag :controller => :matrices, :action => :index do %>
-  <% (0...@dimension).each do |i| %>
-  <p>
-  <% (0...@dimension).each do |j| %>
-  <%= text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0) %>
-  <% end %>
-  </p>
-  <% end %>
-  <%= submit_tag "Preview" %>
+      <% (0...@dimension).each do |i| %>
+          <p>
+          <% (0...@dimension).each do |j| %>
+              <%= text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0) %>
+          <% end %>
+          </p>
+      <% end %>
+      <%= submit_tag "Preview" %>
   <% end %>
 
   <%= matrix_latex @matrix if @matrix %>
