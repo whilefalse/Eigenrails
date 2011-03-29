@@ -16,6 +16,6 @@
   <% end %>
 
   <%= tex_image(tex_for_matrix(@matrix)) if @matrix %>
-  <%= tex_image(tex_for_matrix(@matrix, 'v')+' = '+ @matrix.determinant) if @matrix %>
+  <%= tex_image(tex_for_matrix(@matrix, 'v')+' = '+ @matrix.determinant.to_s) if @matrix %>
 
 </div>
