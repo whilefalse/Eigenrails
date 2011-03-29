@@ -4,7 +4,7 @@
   <% (0...@dimension).each do |i| %>
   <p>
   <% (0...@dimension).each do |j| %>
-  <%= text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i][j] : 0) %>
+  <%= text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0) %>
   <% end %>
   </p>
   <% end %>
