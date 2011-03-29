@@ -3,7 +3,7 @@ class MatricesController < ApplicationController
 
   def index
     @dimension = if params[:size]
-                   params[:size]
+                   params[:size].to_i
                  elsif params[:matrix]
                    params[:matrix].length
                  else
