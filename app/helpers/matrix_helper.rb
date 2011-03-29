@@ -1,4 +1,4 @@
-module MyHelper
+module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
 
   def matrix_latex matrix
