@@ -1,7 +1,0 @@
-class MatrixHelper < ApplicationHelper
-
-  def matrix_latex matrix
-    matrix
-  end
-
-end
