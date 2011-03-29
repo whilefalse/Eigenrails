@@ -9,5 +9,4 @@ module MatrixHelper
   def tex_url tex
     CHART_URL + u(tex)
   end
-
 end
