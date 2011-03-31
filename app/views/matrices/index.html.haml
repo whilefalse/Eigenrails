@@ -1,14 +1,14 @@
 %h1 Matrix
 #matrix
-  - @allowed_dimensions.each do |d|
-    = link_to("#{d}x#{d}", {:dimension => d})
-
-  = form_tag :controller => :matrices, :action => :index do
-    - (0...@dimension).each do |i| %>
-    %p
-      - (0...@dimension).each do |j|
-        = text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0)
+  = form_tag :controller => :matrices, :action => :index do |f|
+    - (0...@dimension).each do |i|
+      %p
+        - (0...@dimension).each do |j|
+          = text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0)
     = submit_tag "Preview"
 
   = tex_image(@matrix.to_tex) if @matrix
   = tex_image(@matrix.to_tex('v') + ' = ' + @matrix.determinant.to_s) if @matrix
+
+  - @allowed_dimensions.each do |d|
+    = link_to("#{d}x#{d}", {:dimension => d})
