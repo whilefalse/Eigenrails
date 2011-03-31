@@ -1,16 +1,16 @@
 #matrix-result
   .matrix-result-row
     %h3 Matrix
-    = tex_image(@matrix.to_tex)
+    = tex_image(matrix_tex @matrix)
 
   .matrix-result-row
     %h3 Characteristic Equation
-    = tex_image(@matrix.char_eq_tex)
+    = tex_image(char_eq_tex @matrix)
 
   .matrix-result-row
     %h3 Eigenvalues
-    = tex_image(@matrix.eigen_values_tex)
+    = tex_image(eigen_values_tex @matrix)
 
   .matrix-result-row
     %h3 Check on Wolfram Alpha
-    = link_to 'Matrix on Wolfram Alpha', wolfram_url(@matrix.to_wolfram)
+    = link_to 'Matrix on Wolfram Alpha', wolfram_url(@matrix)
