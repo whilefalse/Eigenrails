@@ -33,7 +33,6 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.25)
-    hassle
     i18n (0.5.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -74,4 +73,3 @@ DEPENDENCIES
   rails (= 3.0.5)
   sqlite3
   haml (= 3.0.25)
-  hassle
