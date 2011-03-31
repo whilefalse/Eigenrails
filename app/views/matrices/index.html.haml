@@ -1,6 +1,6 @@
 %h1 Matrix
 #matrix
-  = @allowed_dimensions.each do |d|
+  - @allowed_dimensions.each do |d|
     = link_to("#{d}x#{d}", {:dimension => d})
 
   = form_tag :controller => :matrices, :action => :index do
