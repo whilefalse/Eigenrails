@@ -1,3 +1,62 @@
+$bg: #DFFFA5;
+$hover: #CDC9C9;
+$white: #FFFFFF;
+$border-color: #000000;
+
+html{
+    background-color: $bg;
+}
 body{
-    color: red;
+    font-family: "Verdana", Arial, sans;
+    text-align: center;
+    padding-top: 50px;
+}
+h1{
+    font-size: 200%;
+}
+h2{
+    font-size: 120%;
+}
+h3{
+    font-size: 110%;
+}
+h1,h2,h3,h4,h5,h6{
+    margin-bottom: 10px;
+}
+#container{
+    width: 960px;
+    margin: auto;
+}
+#matrix-container{
+    #dimensions{
+        margin: 20px 0px;
+    }
+    input.matrix-value{
+        border: 1px solid $border-color;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        margin-bottom: 5px;
+        &:hover, &.hover{
+            background-color: $hover;
+        }
+    }
+    #matrix-result{
+        background-color: $white;
+        width: 60%;
+        margin: 10px auto;
+        padding: 10px;
+        .matrix-result-row{
+            margin: 10px;
+            padding: 10px;
+            border-bottom: 1px dashed $border-color;
+            h3{
+                text-align: left;
+                font-weight: bold;
+                &:after{
+                    content: ':';
+                }
+            }
+        }
+    }
 }

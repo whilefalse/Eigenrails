@@ -1,14 +1,12 @@
-%h1 Matrix
-#matrix
-  - @allowed_dimensions.each do |d|
-    = link_to("#{d}x#{d}", {:dimension => d})
+%h1 EigenRails
+%h2 Calculate Eigenvalues of 2x2 matrices
+#matrix-container
+  #matrix
+    = form_tag :controller => :matrices, :action => :index do |f|
+      - (0...@dimension).each do |i|
+        %p
+          - (0...@dimension).each do |j|
+            = text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0), :class => 'matrix-value'
+      = submit_tag "Calculate", :class => 'submit'
 
-  = form_tag :controller => :matrices, :action => :index do |f|
-    - (0...@dimension).each do |i|
-      %p
-        - (0...@dimension).each do |j|
-          = text_field_tag :"matrix[#{i}][#{j}]", (@matrix ? @matrix[i,j] : 0)
-    = submit_tag "Preview"
-
-  = tex_image(@matrix.to_tex) if @matrix
-  = tex_image(@matrix.to_tex('v') + ' = ' + @matrix.determinant.to_s) if @matrix
+    = render 'matrix' if @matrix
