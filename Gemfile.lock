@@ -70,6 +70,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml (= 3.0.25)
   rails (= 3.0.5)
   sqlite3
-  haml (= 3.0.25)
