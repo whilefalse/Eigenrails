@@ -28,7 +28,7 @@ end
 describe 'TexMatrix' do
   describe '#eigen_values' do
     it "calculates eigen values for empty matrix" do
-      TexMatrix[[0,0],[0,0]].eigen_values.should == [0.0, 0.1]
+      TexMatrix[[0,0],[0,0]].eigen_values.should == [0.0, 0.0]
     end
 
     it "calculates eign values for integer matrix" do
