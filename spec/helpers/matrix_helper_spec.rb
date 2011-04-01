@@ -23,14 +23,16 @@ describe MatrixHelper do
       with_sign(-0.1).should == '-0.1'
     end
   end
+end
 
+describe 'TexMatrix' do
   describe '#eigen_values' do
     it "calculates eigen values for empty matrix" do
-      eigen_values(Matrix[[0,0],[0,0]]).should == [0.0, 0.0]
+      TexMatrix[[0,0],[0,0]].eigen_values.should == [0.0, 0.0]
     end
 
     it "calculates eign values for integer matrix" do
-      eigen_values(Matrix[[-1,-2],[4,5]]).should == [3.0,1.0]
+      TexMatrix[[-1,-2],[4,5]].eigen_values.should == [3.0,1.0]
     end
   end
 end
