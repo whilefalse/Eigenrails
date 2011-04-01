@@ -1,5 +1,9 @@
 require "matrix"
 
+def self.with_sign x
+  (x >= 0 ? "+#{x}" : x).to_s
+end
+
 class TexMatrix < Matrix
   def to_tex type='b'
     '\begin{' + type + 'matrix}' + to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{' + type + 'matrix}'
@@ -30,11 +34,6 @@ class TexMatrix < Matrix
 
   def wolfram_url
     WOLFRAM_URL + u('{{' + to_a.map {|row| row.join(',')}.join('},{') + '}}')
-  end
-
-  private
-  def self.with_sign x
-    (x >= 0 ? "+#{x}" : x).to_s
   end
 end
 
