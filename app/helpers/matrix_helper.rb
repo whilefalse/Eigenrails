@@ -1,6 +1,6 @@
 require "matrix"
 
-def self.with_sign x
+def with_sign x
   (x >= 0 ? "+#{x}" : x).to_s
 end
 
