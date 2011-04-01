@@ -5,6 +5,8 @@ def with_sign x
 end
 
 class TexMatrix < Matrix
+  WOLFRAM_URL = "http://www.wolframalpha.com/input/?i="
+
   def to_tex type='b'
     '\begin{' + type + 'matrix}' + to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{' + type + 'matrix}'
   end
@@ -39,7 +41,6 @@ end
 
 module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
-  WOLFRAM_URL = "http://www.wolframalpha.com/input/?i="
 
   def tex_image tex, alt='Matrix Preview'
     image_tag chart_url(tex), :alt => alt
