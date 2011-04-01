@@ -5,8 +5,6 @@ def with_sign x
 end
 
 class TexMatrix < Matrix
-  WOLFRAM_URL = "http://www.wolframalpha.com/input/?i="
-
   def to_tex type='b'
     '\begin{' + type + 'matrix}' + to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{' + type + 'matrix}'
   end
@@ -34,13 +32,14 @@ class TexMatrix < Matrix
     "\\lambda_1 = #{e1.round 3}\\\\ \\lambda_2 = #{e2.round 3}"
   end
 
-  def wolfram_url
-    WOLFRAM_URL + u('{{' + to_a.map {|row| row.join(',')}.join('},{') + '}}')
+  def to_wolfram
+    '{{' + to_a.map {|row| row.join(',')}.join('},{') + '}}'
   end
 end
 
 module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
+  WOLFRAM_URL = "http://www.wolframalpha.com/input/?i="
 
   def tex_image tex, alt='Matrix Preview'
     image_tag chart_url(tex), :alt => alt
@@ -48,5 +47,9 @@ module MatrixHelper
 
   def chart_url tex
     CHART_URL + u(tex)
+  end
+
+  def wolfram_url code
+    WOLFRAM_URL + u(code)
   end
 end
