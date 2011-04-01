@@ -1,4 +1,8 @@
 require "matrix"
+
+class TexMatrix < Matrix
+
+end	
 module MatrixHelper
   CHART_URL = "https://chart.googleapis.com/chart?cht=tx&chl="
   WOLFRAM_URL = "http://www.wolframalpha.com/input/?i="
