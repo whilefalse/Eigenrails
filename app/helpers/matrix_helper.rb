@@ -4,6 +4,7 @@ def with_sign x
   (x >= 0 ? "+#{x}" : x).to_s
 end
 
+
 class TexMatrix < Matrix
   def to_tex type='b'
     '\begin{' + type + 'matrix}' + to_a.map {|row| row.join(' & ')}.join(' \\\\') + '\end{' + type + 'matrix}'
