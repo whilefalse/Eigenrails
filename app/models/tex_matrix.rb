@@ -1,4 +1,6 @@
 require "matrix"
+require "complex"
+
 class TexMatrix < Matrix
   def TexMatrix.[](*rows)
     TexMatrix.rows(rows)
@@ -22,13 +24,13 @@ class TexMatrix < Matrix
 
   def eigen_values
     a, b, c = 1, -trace, determinant
-    rhs = Math.sqrt(b**2 - 4*a*c)
+    rhs = Math.sqrt(Complex(b**2 - 4*a*c))
     [(-b + rhs)/2*a, (-b - rhs) / 2*a]
   end
 
   def eigen_values_tex
     e1, e2 = eigen_values
-    "\\lambda_1 = #{e1.round 3}\\\\ \\lambda_2 = #{e2.round 3}"
+    "\\lambda_1 = #{format_num(e1, 3)}\\\\ \\lambda_2 = #{format_num(e2, 3)}"
   end
 
   def to_wolfram
@@ -36,6 +38,13 @@ class TexMatrix < Matrix
   end
 end
 
+def format_num x, n
+  if x.kind_of? Complex
+    Complex(x.real.round(n), x.imag.round(n))
+  else
+    x.round(n)
+  end
+end
 
 def with_sign x
   (x >= 0 ? "+#{x}" : x).to_s
